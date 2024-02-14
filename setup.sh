@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+rm -rf ~/.vimrc
+ln -s ~/dotfiles/.vimrc ~/.vimrc
+
+rm -rf ~/.zshrc
+ln -s ~/dotfiles/.zshrc ~/.zshrc
+
 rm -rf ~/.config/nvim
 ln -s ~/dotfiles/.config/nvim ~/.config/nvim
 
