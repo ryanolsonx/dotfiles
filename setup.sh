@@ -6,6 +6,9 @@ ln -s ~/dotfiles/.vimrc ~/.vimrc
 rm -rf ~/.zshrc
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 
+rm -rf ~/.ctags
+ln -s ~/dotfiles/.ctags ~/.ctags
+
 rm -rf ~/.config/nvim
 ln -s ~/dotfiles/.config/nvim ~/.config/nvim
 
