@@ -10,13 +10,14 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'patstockwell/vim-monokai-tasty'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'tpope/vim-fugitive'
+Plug 'ku1ik/vim-monokai'
 call plug#end()
 
 syn on
+color monokai
 set updatetime=100
 set signcolumn=yes
 set ai sts=2 sw=2 et
@@ -26,4 +27,5 @@ set dir=/tmp bdir=/tmp
 set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 nn <c-p> :GFiles<cr>
 nn <c-f> :Rg<cr>
+nn <c-t> :Tags<cr>
 hi SignColumn ctermbg=NONE

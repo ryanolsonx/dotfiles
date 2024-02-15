@@ -2,6 +2,7 @@
 --exclude=node_modules
 --exclude=.nx
 --exclude=coverage
+--exclude=public
 --exclude=.next
 --exclude=dist
 --recurse=yes
