@@ -1,26 +1,29 @@
-call plug#begin()
-Plug 'junegunn/fzf'
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
 Plug 'junegunn/fzf.vim'
-Plug 'altercation/vim-colors-solarized'
-Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'patstockwell/vim-monokai-tasty'
 Plug 'pangloss/vim-javascript'
-Plug 'tomasiser/vim-code-dark'
-Plug 'bakpakin/janet.vim'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
-syntax on
-color solarized
-set backspace=2
-set autoindent
-set expandtab
-set softtabstop=2
-set shiftwidth=2
-set hidden
+syn on
+set updatetime=100
+set signcolumn=yes
+set ai sts=2 sw=2 et
+set nu
 set laststatus=2
-set path+=apps/*/src/**,libs/*/src/**
 set dir=/tmp bdir=/tmp
-nn <space> :e %:h<cr>
-au BufNewFile,BufRead *.go :setlocal noexpandtab sts=0 sw=0
+set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 nn <c-p> :GFiles<cr>
 nn <c-f> :Rg<cr>
-nn , :set nu!<cr>
+hi SignColumn ctermbg=NONE
