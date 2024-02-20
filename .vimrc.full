@@ -13,11 +13,9 @@ Plug 'tpope/vim-unimpaired'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'tpope/vim-fugitive'
-Plug 'ku1ik/vim-monokai'
 call plug#end()
 
 syn on
-color monokai
 set updatetime=100
 set signcolumn=yes
 set ai sts=2 sw=2 et

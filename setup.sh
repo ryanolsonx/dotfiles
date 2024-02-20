@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
-rm -rf ~/.vimrc
-ln -s ~/dotfiles/.vimrc ~/.vimrc
+rm -rf ~/.vimrc.full
+ln -s ~/dotfiles/.vimrc.full ~/.vimrc.full
+
+rm -rf ~/.vimrc.minimal
+ln -s ~/dotfiles/.vimrc.minimal ~/.vimrc.minimal
+
+rm -rf ~/.vimrc.git
+ln -s ~/dotfiles/.vimrc.git ~/.vimrc.git
 
 rm -rf ~/.zshrc
 ln -s ~/dotfiles/.zshrc ~/.zshrc

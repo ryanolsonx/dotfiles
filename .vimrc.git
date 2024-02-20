@@ -1,0 +1,5 @@
+set tw=72
+syn on
+set ruler
+set laststatus=2
+set cc=50,72
