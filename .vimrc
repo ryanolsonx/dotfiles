@@ -28,4 +28,5 @@ set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 nn <c-p> :GFiles<cr>
 nn <c-f> :Rg<cr>
 nn <c-t> :Tags<cr>
-hi SignColumn ctermbg=NONE
+hi SignColumn ctermbg=235
+nn <space> :e %:h<cr>
