@@ -8,12 +8,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
 Plug 'junegunn/fzf.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'MaxMEllon/vim-jsx-pretty'
+"Plug 'pangloss/vim-javascript'
+"Plug 'MaxMEllon/vim-jsx-pretty'
+"Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 syntax on
-color desert
+set bg=light
+color quiet
 set number
 set backspace=2
 set hidden
@@ -35,6 +37,9 @@ inoremap <silent><expr> <c-@> coc#refresh()
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
 hi! link NonText Normal
+hi! link SignColumn LineNr
+hi Comment ctermfg=2 cterm=NONE
+hi Normal ctermbg=NONE
 
 " Show hover when provider exists, fallback to vim's builtin behavior.
 function! ShowDocumentation()
