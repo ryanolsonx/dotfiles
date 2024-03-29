@@ -1,0 +1,379 @@
+{
+  "workbench.colorCustomizations": {
+    "[Solarized Dark]": {
+      "editorBracketHighlight.foreground1": "#268bd2",
+      "editorBracketHighlight.foreground2": "#b58900",
+      "editorBracketHighlight.foreground3": "#d33682",
+      "editorIndentGuide.activeBackground1": "#7f939380",
+      "editorIndentGuide.background1": "#4f555580",
+      "editorLineNumber.foreground": "#586e75",
+      "editorLineNumber.activeForeground": "#586e75",
+      "editorGutter.background": "#073642",
+      "editorCursor.foreground": "#839496"
+    },
+    "[Solarized Light]": {
+      "editorBracketHighlight.foreground1": "#268bd2",
+      "editorBracketHighlight.foreground2": "#b58900",
+      "editorBracketHighlight.foreground3": "#d33682",
+      "editorIndentGuide.activeBackground1": "#93a5ab80",
+      "editorIndentGuide.background1": "#a9c4cd40",
+      "editorLineNumber.foreground": "#93a1a1",
+      "editorLineNumber.activeForeground": "#93a1a1",
+      "editorGutter.background": "#eee8d5"
+    },
+    "[Night Owl]": {
+      "sideBar.border": "#5f7e9744",
+      "editorGroup.border": "#5f7e9744"
+    }
+  },
+  "editor.tokenColorCustomizations": {
+    "[Solarized Dark]": {
+      "textMateRules": [
+        {
+          "scope": "comment",
+          "settings": {
+            "foreground": "#586e75",
+            "fontStyle": "italic"
+          }
+        },
+        // Constant:
+        // - Constant        any constant
+        // - String          a string constant: "this is a string"
+        // - Character       a character constant: 'c', '\n'
+        // - Number          a number constant: 234, 0xff
+        // - Boolean         a boolean constant: TRUE, false
+        // - Float
+        {
+          "scope": [
+            "constant",
+            "constant.character",
+            "constant.numeric",
+            "constant.numeric.integer",
+            "constant.numeric.float"
+          ],
+          "settings": {
+            "foreground": "#2aa198"
+          }
+        },
+
+        // Identifier:
+        // - Identifier      any variable name
+        // - Function        function name (also: methods for classes)
+        // Already implemented correctly.
+
+        // Get rid of white
+        {
+          "scope": "storage",
+          "settings": {
+            "foreground": "#b58900",
+            "fontStyle": ""
+          }
+        },
+
+        // Include
+        {
+          "scope": [
+            "keyword.control.import",
+            "keyword.control.export",
+            "keyword.control.from",
+            "keyword.control.as"
+          ],
+          "settings": {
+            "foreground": "#cb4b16"
+          }
+        },
+        // Clear
+        {
+          "scope": [
+            "variable.other.property",
+            "punctuation.section.embedded.begin",
+            "punctuation.section.embedded.end"
+          ],
+          "settings": {
+            "foreground": "#839496",
+            "fontStyle": ""
+          }
+        }
+      ]
+    },
+    "[Solarized Light]": {
+      // vmode   = "gui"
+      // base03  = "#002b36"
+      // base02  = "#073642"
+      // base01  = "#586e75"
+      // base00  = "#657b83"
+      // base0   = "#839496"
+      // base1   = "#93a1a1"
+      // base2   = "#eee8d5"
+      // base3   = "#fdf6e3"
+      // yellow  = "#b58900"
+      // orange  = "#cb4b16"
+      // red     = "#dc322f"
+      // magenta = "#d33682"
+      // violet  = "#6c71c4"
+      // blue    = "#268bd2"
+      // cyan    = "#2aa198"
+      // "green  = "#859900" "original
+      // green   = "#719e07" "experimental
+      "textMateRules": [
+        {
+          "scope": "comment",
+          "settings": {
+            "foreground": "#93a1a1",
+            "fontStyle": "italic"
+          }
+        },
+        // Constant:
+        // - Constant        any constant
+        // - String          a string constant: "this is a string"
+        // - Character       a character constant: 'c', '\n'
+        // - Number          a number constant: 234, 0xff
+        // - Boolean         a boolean constant: TRUE, false
+        // - Float
+        {
+          "scope": [
+            "constant",
+            "constant.character",
+            "constant.numeric",
+            "constant.numeric.integer",
+            "constant.numeric.float"
+          ],
+          "settings": {
+            "foreground": "#2aa198"
+          }
+        },
+
+        // Identifier:
+        // - Identifier      any variable name
+        // - Function        function name (also: methods for classes)
+        // Already implemented correctly.
+
+        // Get rid of white
+        {
+          "scope": "storage",
+          "settings": {
+            "foreground": "#b58900",
+            "fontStyle": ""
+          }
+        },
+
+        // Include
+        {
+          "scope": [
+            "keyword.control.import",
+            "keyword.control.export",
+            "keyword.control.from",
+            "keyword.control.as"
+          ],
+          "settings": {
+            "foreground": "#cb4b16"
+          }
+        }
+      ]
+    },
+    "[Solarized Monochrome Light]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "meta.structure.dictionary.value.json string.quoted.double",
+            "source.yaml string"
+          ],
+          "settings": {
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": "source.yaml entity.name.tag",
+          "settings": {
+            "fontStyle": "bold"
+          }
+        }
+      ]
+    },
+    "[Atom One Dark][Everforest Dark]": {
+      "textMateRules": [
+        {
+          "scope": "comment",
+          "settings": {
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": ["entity.name.tag.doctype", "meta.tag.sgml.doctype"],
+          "settings": {
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": "quote",
+          "settings": {
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": "meta.tag.sgml.doctype.html",
+          "settings": {
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": "meta.method.declaration storage.type.js",
+          "settings": {
+            "fontStyle": "normal"
+          }
+        },
+        {
+          "scope": "support.type.property-name.json",
+          "settings": {
+            "fontStyle": "normal"
+          }
+        },
+        {
+          "scope": "meta.structure.dictionary.value.json string.quoted.double",
+          "settings": {
+            "fontStyle": "normal"
+          }
+        },
+        {
+          "scope": "string.quoted.double.json punctuation.definition.string.json",
+          "settings": {
+            "fontStyle": "normal"
+          }
+        },
+        {
+          "scope": "markup.italic",
+          "settings": {
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": "markup.quote",
+          "settings": {
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": ["markup.superscript", "markup.subscript"],
+          "settings": {
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": [
+            "meta.tag.js meta.embedded.expression.js punctuation.section.embedded.begin.js",
+            "meta.tag.js meta.embedded.expression.js punctuation.section.embedded.end.js",
+            "meta.property-list.css meta.property-value.css variable.other.less",
+            "punctuation.section.embedded.begin.js.jsx",
+            "punctuation.section.embedded.end.js.jsx",
+            "meta.property-list.scss variable.scss",
+            "meta.property-list.sass variable.sass",
+            "keyword.operator.logical",
+            "keyword.operator.arithmetic",
+            "keyword.operator.bitwise",
+            "keyword.operator.increment",
+            "keyword.operator.ternary",
+            "keyword.operator.comparison",
+            "keyword.operator.assignment",
+            "keyword.operator.operator",
+            "keyword.operator.or.regexp",
+            "keyword.operator.expression.in",
+            "keyword.operator.type",
+            "punctuation.section.embedded.js",
+            "punctuation.definintion.string",
+            "punctuation"
+          ],
+          "settings": {
+            "fontStyle": "normal"
+          }
+        },
+        {
+          "scope": [
+            "keyword.other.unit",
+            "support.type.property-name.css",
+            "support.type.vendored.property-name.css",
+            "support.constant.vendored.property-value.css",
+            "meta.import.ts meta.block.ts variable.other.readwrite.alias.ts",
+            "meta.import.tsx meta.block.tsx variable.other.readwrite.alias.tsx",
+            "meta.import.js variable.other",
+            "meta.export.ts meta.block.ts variable.other.readwrite.alias.ts",
+            "meta.export.tsx meta.block.tsx variable.other.readwrite.alias.tsx",
+            "meta.export.js variable.other",
+            "entity.name.function.ts",
+            "entity.name.function.tsx",
+            "support.type.primitive",
+            "entity.name.tag.yaml",
+            "entity.other.attribute-name",
+            "meta.tag.sgml.doctype.html",
+            "entity.name.tag.doctype",
+            "meta.tag.sgml.doctype",
+            "entity.name.tag.custom",
+            "source.js.jsx keyword.control.flow.js",
+            "support.type.property.css",
+            "support.function.basic_functions",
+            "constant.other.color.rgb-value.hex.css",
+            "constant.other.rgb-value.css",
+            "variable.assignment.coffee",
+            "support.function.basic_functions",
+            "keyword.operator.expression.typeof",
+            "punctuation.section.embedded",
+            "keyword.operator.type.annotation",
+            "variable.object.property.ts",
+            "variable.object.property.js",
+            "variable.object.property.jsx",
+            "variable.object.property.tsx",
+            "assignment.coffee",
+            "entity.name.type.ts",
+            "support.constant.math",
+            "meta.object-literal.key",
+            "meta.var.expr storage.type",
+            "variable.scss",
+            "variable.sass",
+            "variable.other.less",
+            "variable.parameter.url.scss",
+            "variable.parameter.url.sass",
+            "parameter",
+            "string",
+            "italic",
+            "quote",
+            "keyword",
+            "storage",
+            "language",
+            "constant.language",
+            "variable.language",
+            "type .function",
+            "type.function",
+            "storage.type.class",
+            "type.var",
+            "meta.parameter",
+            "variable.parameter",
+            "meta.parameters",
+            "keyword.control",
+            "modifier",
+            "this",
+            "comment"
+          ],
+          "settings": {
+            "fontStyle": "italic"
+          }
+        }
+      ]
+    }
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  "window.zoomPerWindow": false,
+  "git.inputValidation": true,
+  "git.autofetch": true,
+  "workbench.colorTheme": "Solarized Dark",
+  "editor.fontFamily": "Input Mono, Menlo, Monaco, 'Courier New', monospace",
+  "terminal.integrated.smoothScrolling": true,
+  "terminal.integrated.scrollback": 1000000,
+  "editor.bracketPairColorization.enabled": false,
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredLightColorTheme": "Solarized Light",
+  "workbench.preferredDarkColorTheme": "Solarized Dark",
+  "editor.fontSize": 14
+}
