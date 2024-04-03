@@ -1,5 +1,5 @@
 syntax on
-color solarized
+color desert
 set number
 set laststatus=2
 set backspace=2

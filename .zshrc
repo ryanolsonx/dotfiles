@@ -11,3 +11,5 @@ setopt extended_history
 PATH="$HOME/bin:$PATH"
 
 source ~/.zshrc.private
+export BUN_INSTALL=$HOME/.bun
+export PATH=$BUN_INSTALL/bin:$PATH
