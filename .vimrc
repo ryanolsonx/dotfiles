@@ -12,15 +12,10 @@ set shiftwidth=2
 set expandtab
 set directory=/tmp
 set backupdir=/tmp
-set path+=app/**,config/**,apps/**,libs/**,.circleci/**,.github/**
-nn <space> :e %:h<cr>
+set path+=app/**,config/**,apps/**,libs/**,.circleci/**,.github/**,src/**
 set grepprg=git\ grep\ -n
-
-function! SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
-
-nmap gm :call SynStack()<cr>
+nn <space> :e %:h<cr>
+nn ]b :bnext<cr>
+nn [b :bprev<cr>
+nn ]q :cnext<cr>
+nn [q :cprev<cr>
