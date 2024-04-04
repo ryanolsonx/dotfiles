@@ -3,6 +3,7 @@ syntax on
 color desert
 set number
 set laststatus=2
+set ruler
 set backspace=2
 set hidden
 set autoindent
