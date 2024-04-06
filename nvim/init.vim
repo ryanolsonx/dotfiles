@@ -34,6 +34,9 @@ set clipboard+=unnamedplus
 
 " Plugin config
 let g:airline_powerline_fonts = 1
+let g:airline_section_y = ''
+let g:airline_section_z = '%l:%c'
+let g:airline_skip_empty_sections = 1
 let g:ale_set_highlights = 0
 let g:ale_lint_on_enter = 1
 let g:ale_fix_on_save = 1
