@@ -25,4 +25,7 @@ augroup FileTypeCommands
   " Git
   autocmd FileType gitcommit setlocal spell
   autocmd FileType gitcommit setlocal textwidth=72
+
+  " q to kill terminal (useful for test tabs)
+  autocmd TermOpen * nnoremap <buffer> q :bd!<cr>
 augroup END
