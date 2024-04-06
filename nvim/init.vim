@@ -21,4 +21,8 @@ augroup FileTypeCommands
   au!
   " Get out of help using q
   autocmd FileType help nnoremap <buffer> q :q<cr>
+
+  " Git
+  autocmd FileType gitcommit setlocal spell
+  autocmd FileType gitcommit setlocal textwidth=72
 augroup END
