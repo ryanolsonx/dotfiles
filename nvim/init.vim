@@ -13,6 +13,7 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Basic settings
+let g:dracula_italic = 1
 color dracula
 set number
 set autoindent
