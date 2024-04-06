@@ -27,6 +27,7 @@ set signcolumn=yes
 set updatetime=300
 set hidden
 set encoding=utf-8
+set clipboard+=unnamedplus
 
 " Plugin config
 let g:airline_powerline_fonts = 1
