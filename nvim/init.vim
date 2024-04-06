@@ -11,6 +11,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'}
 call plug#end()
 
 " Basic settings
@@ -22,6 +23,9 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set signcolumn=yes
+set updatetime=300
+set hidden
+set encoding=utf-8
 
 " Plugin config
 let g:ale_set_highlights = 0
@@ -38,6 +42,22 @@ nn <leader>f :GFiles<cr>
 nn <leader>p :Files<cr>
 nn <leader>b :Buffers<cr>
 nn <leader>s :!npx stylelint %<cr>
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
+inoremap <silent><expr> <c-space> coc#refresh()
+fu! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfu
+nnoremap <silent> K :call ShowDocumentation()<CR>
 
 " Autocmds
 augroup FileTypeCommands
