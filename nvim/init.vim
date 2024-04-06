@@ -25,7 +25,7 @@ set expandtab
 let mapleader = ' '
 nn <leader>n :NERDTreeToggle<cr>
 nn <leader>f :GFiles<cr>
-nn <leader>F :GFiles<cr>
+nn <leader>p :Files<cr>
 nn <leader>b :Buffers<cr>
 
 " Autocmds
