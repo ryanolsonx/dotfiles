@@ -113,14 +113,12 @@ endfu
 " Autocmds
 augroup FileTypeCommands
   au!
-  " Get out of help using q
+  " Get out things using q
   autocmd FileType help nnoremap <buffer> q :q<cr>
   autocmd FileType fugitive nnoremap <buffer> q :q<cr>
+  autocmd TermOpen * nnoremap <buffer> q :bd!<cr>
 
   " Git
   autocmd FileType gitcommit setlocal spell
   autocmd FileType gitcommit setlocal textwidth=72
-
-  " q to kill terminal (useful for test tabs)
-  autocmd TermOpen * nnoremap <buffer> q :bd!<cr>
 augroup END
