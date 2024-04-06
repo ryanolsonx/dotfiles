@@ -84,6 +84,21 @@ fu! ToggleBetweenTestAndSource()
 endfu
 nn <silent> sj :call ToggleBetweenTestAndSource()<cr>
 
+function! RunJestTest()
+  let in_jest_file = match(expand("%"), '\.test.js$') != -1
+  if in_jest_file
+    let t:last_test_file=@%
+  elseif !exists("t:last_test_file")
+    return
+  end
+
+  :w
+  :silent !clear
+  exec ":split term://npx jest " . t:last_test_file
+  :norm G
+endfunction
+nn \ :call RunJestTest()<cr>
+
 " Autocmds
 augroup FileTypeCommands
   au!
