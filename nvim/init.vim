@@ -51,6 +51,8 @@ nn <leader>p :Files<cr>
 nn <leader>b :Buffers<cr>
 nn <leader>s :!npx stylelint %<cr>
 nn <leader>g :G<cr>
+nn <leader>t :call RunTestOrLast()<cr>
+nn <silent> K :call ShowDocumentation()<CR>
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <silent> gd <Plug>(coc-definition)
@@ -59,6 +61,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 inoremap <silent><expr> <c-space> coc#refresh()
+
 fu! ShowDocumentation()
   if CocAction('hasProvider', 'hover')
     call CocActionAsync('doHover')
@@ -66,7 +69,6 @@ fu! ShowDocumentation()
     call feedkeys('K', 'in')
   endif
 endfu
-nnoremap <silent> K :call ShowDocumentation()<CR>
 
 fu! ToggleBetweenTestAndSource()
   let in_cypress_file = match(expand("%"), '\.cy.jsx$') != -1
@@ -85,9 +87,13 @@ fu! ToggleBetweenTestAndSource()
 endfu
 nn <silent> sj :call ToggleBetweenTestAndSource()<cr>
 
-function! RunJestTest()
-  let in_jest_file = match(expand("%"), '\.test.js$') != -1
+fu! RunTestOrLast()
+  let in_jest_file = match(expand("%"), '\.test.js$') != -1 || match(expand("%"), '\.spec.js$') != -1
+  let in_cypress_file = match(expand("%"), '\.cy.jsx$') != -1
+
   if in_jest_file
+    let t:last_test_file=@%
+  elseif in_cypress_file
     let t:last_test_file=@%
   elseif !exists("t:last_test_file")
     return
@@ -95,10 +101,14 @@ function! RunJestTest()
 
   :w
   :silent !clear
-  exec ":split term://npx jest " . t:last_test_file
+  let cypress = match(t:last_test_file, '\.cy.jsx$') != -1
+  if cypress
+    exec ":split term://bin/cy " . t:last_test_file
+  else
+    exec ":split term://npx jest " . t:last_test_file
+  end
   :norm G
-endfunction
-nn \ :call RunJestTest()<cr>
+endfu
 
 " Autocmds
 augroup FileTypeCommands
