@@ -15,3 +15,10 @@ set expandtab
 " Keybindings
 let mapleader = ' '
 nn <leader>n :NERDTreeToggle<cr>
+
+" Autocmds
+augroup FileTypeCommands
+  au!
+  " Get out of help using q
+  autocmd FileType help nnoremap <buffer> q :q<cr>
+augroup END
