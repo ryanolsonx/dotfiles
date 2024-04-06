@@ -18,6 +18,7 @@ Plug 'tpope/vim-endwise'
 call plug#end()
 
 " Basic settings
+set termguicolors
 let g:dracula_italic = 1
 color dracula
 set number
