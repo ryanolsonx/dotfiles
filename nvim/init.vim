@@ -2,6 +2,7 @@ call plug#begin()
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdtree'
+Plug 'jbranchaud/vim-bdubs'
 call plug#end()
 
 " Basic settings
