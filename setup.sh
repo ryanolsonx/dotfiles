@@ -12,3 +12,6 @@ ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 rm -rf ~/.config/kitty
 mkdir -p ~/.config/kitty
 ln -s ~/dotfiles/kitty.conf ~/.config/kitty/kitty.config
+
+rm -rf ~/.config/nvim
+ln -s ~/dotfiles/nvim ~/.config/nvim
