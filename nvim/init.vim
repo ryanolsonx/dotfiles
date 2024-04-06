@@ -1,5 +1,6 @@
 call plug#begin()
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " Basic settings
