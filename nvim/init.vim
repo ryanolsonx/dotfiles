@@ -10,6 +10,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 " Basic settings
@@ -20,6 +21,15 @@ set autoindent
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set signcolumn=yes
+
+" Plugin config
+let g:ale_set_highlights = 0
+let g:ale_lint_on_enter = 1
+let g:ale_fix_on_save = 1
+" TODO: get stylelint working
+let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'javascriptreact': ['prettier', 'eslint']}
+let g:ale_linters = {'javascript': ['eslint', 'stylelint'], 'javascriptreact': ['eslint', 'stylelint']}
 
 " Keybindings
 let mapleader = ' '
@@ -27,6 +37,7 @@ nn <leader>n :NERDTreeToggle<cr>
 nn <leader>f :GFiles<cr>
 nn <leader>p :Files<cr>
 nn <leader>b :Buffers<cr>
+nn <leader>s :!npx stylelint %<cr>
 
 " Autocmds
 augroup FileTypeCommands
