@@ -8,6 +8,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Basic settings
@@ -21,6 +23,9 @@ set expandtab
 " Keybindings
 let mapleader = ' '
 nn <leader>n :NERDTreeToggle<cr>
+nn <leader>f :GFiles<cr>
+nn <leader>F :GFiles<cr>
+nn <leader>b :Buffers<cr>
 
 " Autocmds
 augroup FileTypeCommands
