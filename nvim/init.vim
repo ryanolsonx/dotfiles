@@ -3,6 +3,10 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdtree'
 Plug 'jbranchaud/vim-bdubs'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Basic settings
