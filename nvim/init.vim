@@ -72,6 +72,7 @@ augroup FileTypeCommands
   au!
   " Get out of help using q
   autocmd FileType help nnoremap <buffer> q :q<cr>
+  autocmd FileType fugitive nnoremap <buffer> q :q<cr>
 
   " Git
   autocmd FileType gitcommit setlocal spell
