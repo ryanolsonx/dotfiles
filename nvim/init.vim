@@ -58,7 +58,7 @@ nn <leader>p :Files<cr>
 nn <leader>b :Buffers<cr>
 nn <leader>s :!npx stylelint %<cr>
 nn <leader>gg :G<cr>
-nn <leader>gp :Git push<cr>
+nn <leader>gp :Git push -f<cr>
 nn <leader>t :call RunTestOrLast()<cr>
 nn <silent> K :call ShowDocumentation()<CR>
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
