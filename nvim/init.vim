@@ -98,13 +98,13 @@ fu! RunTestOrLast()
     if has("nvim")
       exec ":split term://bin/cy " . t:last_test_file
     else
-      exec ":split terminal bin/cy " . t:last_test_file
+      exec ":terminal bin/cy " . t:last_test_file
     end
   else
     if has("nvim")
       exec ":split term://npx jest " . t:last_test_file
     else
-      exec ":split terminal npx jest " . t:last_test_file
+      exec ":terminal npx jest " . t:last_test_file
     end
   end
   :norm G
@@ -137,6 +137,8 @@ augroup FileTypeCommands
   autocmd FileType fugitive nnoremap <buffer> q :q<cr>
   if has("nvim")
     autocmd TermOpen * nnoremap <buffer> q :bd!<cr>
+  else
+    autocmd TerminalOpen * nnoremap <buffer> q :bd!<cr>
   end
 
   " Git
