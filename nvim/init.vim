@@ -30,7 +30,7 @@ set signcolumn=yes
 set updatetime=300
 set hidden
 set encoding=utf-8
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
 
 " Plugin config
 let g:airline_powerline_fonts = 1
@@ -111,9 +111,17 @@ fu! RunTestOrLast()
   :silent !clear
   let cypress = match(t:last_test_file, '\.cy.jsx$') != -1
   if cypress
-    exec ":split term://bin/cy " . t:last_test_file
+    if has("nvim")
+      exec ":split term://bin/cy " . t:last_test_file
+    else
+      exec ":split terminal bin/cy " . t:last_test_file
+    end
   else
-    exec ":split term://npx jest " . t:last_test_file
+    if has("nvim")
+      exec ":split term://npx jest " . t:last_test_file
+    else
+      exec ":split terminal npx jest " . t:last_test_file
+    end
   end
   :norm G
 endfu
@@ -124,7 +132,9 @@ augroup FileTypeCommands
   " Get out things using q
   autocmd FileType help nnoremap <buffer> q :q<cr>
   autocmd FileType fugitive nnoremap <buffer> q :q<cr>
-  autocmd TermOpen * nnoremap <buffer> q :bd!<cr>
+  if has("nvim")
+    autocmd TermOpen * nnoremap <buffer> q :bd!<cr>
+  end
 
   " Git
   autocmd FileType gitcommit setlocal spell
