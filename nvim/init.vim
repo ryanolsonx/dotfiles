@@ -11,10 +11,11 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'dense-analysis/ale'
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'}
 Plug 'airblade/vim-gitgutter'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-endwise'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 call plug#end()
 
 " Basic settings
@@ -30,7 +31,6 @@ set signcolumn=yes
 set updatetime=300
 set hidden
 set encoding=utf-8
-set clipboard=unnamedplus
 
 " Plugin config
 let g:airline_powerline_fonts = 1
@@ -48,6 +48,7 @@ let g:gitgutter_sign_modified = '┃'
 let g:gitgutter_sign_modified_removed = '┃'
 let g:gitgutter_sign_removed = '┃'
 let g:user_emmet_leader_key='<C-j>'
+let g:lsp_document_code_action_signs_enabled = 0
 
 " Keybindings
 let mapleader = ' '
@@ -60,23 +61,6 @@ nn <leader>s :!npx stylelint %<cr>
 nn <leader>gg :G<cr>
 nn <leader>gp :Git push -f<cr>
 nn <leader>t :call RunTestOrLast()<cr>
-nn <silent> K :call ShowDocumentation()<CR>
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <leader>rn <Plug>(coc-rename)
-inoremap <silent><expr> <c-space> coc#refresh()
-
-fu! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('doHover')
-  else
-    call feedkeys('K', 'in')
-  endif
-endfu
 
 fu! ToggleBetweenTestAndSource()
   let in_cypress_file = match(expand("%"), '\.cy.jsx$') != -1
@@ -126,6 +110,25 @@ fu! RunTestOrLast()
   :norm G
 endfu
 
+fu! s:on_lsp_buffer_enabled() abort
+  setlocal omnifunc=lsp#complete
+  setlocal signcolumn=yes
+  if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+  nmap <buffer> gd <plug>(lsp-definition)
+  nmap <buffer> gs <plug>(lsp-document-symbol-search)
+  nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+  nmap <buffer> gr <plug>(lsp-rename)
+  nmap <buffer> gi <plug>(lsp-implementation)
+  nmap <buffer> gt <plug>(lsp-type-definition)
+  nmap <buffer> <leader>r <plug>(lsp-references)
+  nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+  nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+  nmap <buffer> K <plug>(lsp-hover)
+
+  let g:lsp_format_sync_timeout = 1000
+  autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+endfu
+
 " Autocmds
 augroup FileTypeCommands
   au!
@@ -139,4 +142,10 @@ augroup FileTypeCommands
   " Git
   autocmd FileType gitcommit setlocal spell
   autocmd FileType gitcommit setlocal textwidth=72
+augroup END
+
+augroup lsp_install
+  au!
+  " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
