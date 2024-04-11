@@ -16,6 +16,7 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-endwise'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
+Plug 'tpope/vim-fireplace'
 call plug#end()
 
 " Basic settings
