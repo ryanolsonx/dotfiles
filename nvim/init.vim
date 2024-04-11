@@ -59,7 +59,7 @@ nn <leader>f :Rg<cr>
 nn <leader>p :GFiles<cr>
 nn <leader>b :Buffers<cr>
 nn <leader>s :!npx stylelint %<cr>
-nn <leader>gg :G<cr>
+nn <leader>g :G<cr>
 nn <leader>gp :Git push -f<cr>
 nn <leader>gn :call GitPushNew()<cr>
 nn <leader>t :call RunTestOrLast()<cr>
