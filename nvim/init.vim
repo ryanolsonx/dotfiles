@@ -61,6 +61,7 @@ nn <leader>b :Buffers<cr>
 nn <leader>s :!npx stylelint %<cr>
 nn <leader>gg :G<cr>
 nn <leader>gp :Git push -f<cr>
+nn <leader>gn :call GitPushNew()<cr>
 nn <leader>t :call RunTestOrLast()<cr>
 
 fu! ToggleBetweenTestAndSource()
@@ -79,6 +80,11 @@ fu! ToggleBetweenTestAndSource()
   endif
 endfu
 nn <silent> sj :call ToggleBetweenTestAndSource()<cr>
+
+fu! GitPushNew()
+  let branch = trim(system("git rev-parse --abbrev-ref HEAD"))
+  exec ":Git push -u origin " . branch
+endfu
 
 fu! RunTestOrLast()
   let in_jest_file = match(expand("%"), '\.test.js$') != -1 || match(expand("%"), '\.spec.js$') != -1
