@@ -55,8 +55,8 @@ let g:lsp_document_code_action_signs_enabled = 0
 let mapleader = ' '
 nn <leader>n :NERDTreeToggle<cr>
 nn <leader>m :NERDTreeFind<cr>
-nn <leader>f :GFiles<cr>
-nn <leader>p :Files<cr>
+nn <leader>f :Rg<cr>
+nn <leader>p :GFiles<cr>
 nn <leader>b :Buffers<cr>
 nn <leader>s :!npx stylelint %<cr>
 nn <leader>gg :G<cr>
