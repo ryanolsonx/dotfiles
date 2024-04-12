@@ -1,5 +1,6 @@
 call plug#begin()
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdtree'
 Plug 'jbranchaud/vim-bdubs'
@@ -8,6 +9,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'dense-analysis/ale'
@@ -20,9 +22,12 @@ Plug 'tpope/vim-fireplace'
 call plug#end()
 
 " Basic settings
+" let $BAT_THEME = 'Dracula'
 set termguicolors
-let g:dracula_italic = 1
-color dracula
+" let g:dracula_italic = 1
+" color dracula
+set background=light
+color papercolor
 set number
 set autoindent
 set shiftwidth=2
