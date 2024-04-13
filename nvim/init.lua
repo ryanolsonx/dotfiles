@@ -1,4 +1,19 @@
-vim.cmd.source("~/.config/nvim/oldinit.vim")
+--   ,ad8888ba,                               ad88  88               
+--  d8"'    `"8b                             d8"    ""               
+-- d8'                                       88                      
+-- 88              ,adPPYba,   8b,dPPYba,  MM88MMM  88   ,adPPYb,d8  
+-- 88             a8"     "8a  88P'   `"8a   88     88  a8"    `Y88  
+-- Y8,            8b       d8  88       88   88     88  8b       88  
+--  Y8a.    .a8P  "8a,   ,a8"  88       88   88     88  "8a,   ,d88  
+--   `"Y8888Y"'    `"YbbdP"'   88       88   88     88   `"YbbdP"Y8  
+--                                                       aa,    ,88  
+--                                                        "Y8bbdP"   
+
+
+
+-- Load Vim plugins
+
+vim.cmd.source("~/.config/nvim/plugins.vim")
 
 
 
