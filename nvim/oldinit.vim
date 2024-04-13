@@ -36,7 +36,6 @@ fu! ToggleBetweenTestAndSource()
     :silent! e %<.test.js
   endif
 endfu
-nn <silent> sj :call ToggleBetweenTestAndSource()<cr>
 
 fu! GitPushNew()
   let branch = trim(system("git rev-parse --abbrev-ref HEAD"))

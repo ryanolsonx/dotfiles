@@ -39,6 +39,7 @@ vim.keymap.set('n', '<Leader>g', '<cmd>G<cr>')
 vim.keymap.set('n', '<Leader>gp', '<cmd>Git push -f<cr>')
 vim.keymap.set('n', '<Leader>gn', '<cmd>call GitPushNew()<cr>')
 vim.keymap.set('n', '<Leader>t', '<cmd>call RunTestOrLast()<cr>')
+vim.keymap.set('n', 'sj', '<cmd>call ToggleBetweenTestAndSource()<cr>', { silent = true })
 
 -- Autocmds
 local group = vim.api.nvim_create_augroup('file_type_commands', { clear = true })
