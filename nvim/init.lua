@@ -1,19 +1,40 @@
---   ,ad8888ba,                               ad88  88               
---  d8"'    `"8b                             d8"    ""               
--- d8'                                       88                      
--- 88              ,adPPYba,   8b,dPPYba,  MM88MMM  88   ,adPPYb,d8  
--- 88             a8"     "8a  88P'   `"8a   88     88  a8"    `Y88  
--- Y8,            8b       d8  88       88   88     88  8b       88  
---  Y8a.    .a8P  "8a,   ,a8"  88       88   88     88  "8a,   ,d88  
---   `"Y8888Y"'    `"YbbdP"'   88       88   88     88   `"YbbdP"Y8  
---                                                       aa,    ,88  
---                                                        "Y8bbdP"   
+--   ,ad8888ba,                               ad88  88
+--  d8"'    `"8b                             d8"    ""
+-- d8'                                       88
+-- 88              ,adPPYba,   8b,dPPYba,  MM88MMM  88   ,adPPYb,d8
+-- 88             a8"     "8a  88P'   `"8a   88     88  a8"    `Y88
+-- Y8,            8b       d8  88       88   88     88  8b       88
+--  Y8a.    .a8P  "8a,   ,a8"  88       88   88     88  "8a,   ,d88
+--   `"Y8888Y"'    `"YbbdP"'   88       88   88     88   `"YbbdP"Y8
+--                                                       aa,    ,88
+--                                                        "Y8bbdP"
 
 
 
 -- Load Vim plugins
 
-vim.cmd.source("~/.config/nvim/plugins.vim")
+vim.cmd([[
+call plug#begin()
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'sheerun/vim-polyglot'
+Plug 'scrooloose/nerdtree'
+Plug 'jbranchaud/vim-bdubs'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'dense-analysis/ale'
+Plug 'airblade/vim-gitgutter'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fireplace'
+call plug#end()
+]])
 
 
 
