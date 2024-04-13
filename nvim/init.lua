@@ -27,6 +27,17 @@ vim.g.gitgutter_sign_modified_removed = '┃'
 vim.g.gitgutter_sign_removed = '┃'
 vim.g.user_emmet_leader_key = '<C-j>'
 
+-- Custom functions
+function trim_newline(str)
+  return string.gsub(str, '\n', '')
+end
+
+function git_push_new_branch()
+  local branch = vim.fn.system({'git', 'rev-parse', '--abbrev-ref', 'HEAD'})
+  branch = trim_newline(branch)
+  vim.cmd("Git push -u origin " .. branch)
+end
+
 -- Key bindings
 vim.g.mapleader = ' '
 vim.keymap.set('n', '<Leader>n', '<cmd>NERDTreeToggle<cr>')
@@ -38,7 +49,7 @@ vim.keymap.set('n', '<Leader>e', '<cmd>!npx eslint %<cr>')
 vim.keymap.set('n', '<Leader>s', '<cmd>!npx stylelint %<cr>')
 vim.keymap.set('n', '<Leader>g', '<cmd>G<cr>')
 vim.keymap.set('n', '<Leader>gp', '<cmd>Git push -f<cr>')
-vim.keymap.set('n', '<Leader>gn', '<cmd>call GitPushNew()<cr>')
+vim.keymap.set('n', '<Leader>gn', git_push_new_branch)
 vim.keymap.set('n', '<Leader>t', '<cmd>call RunTestOrLast()<cr>')
 vim.keymap.set('n', 'sj', '<cmd>call ToggleBetweenTestAndSource()<cr>', { silent = true })
 

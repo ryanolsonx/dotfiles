@@ -35,11 +35,6 @@ fu! ToggleBetweenTestAndSource()
   endif
 endfu
 
-fu! GitPushNew()
-  let branch = trim(system("git rev-parse --abbrev-ref HEAD"))
-  exec ":Git push -u origin " . branch
-endfu
-
 fu! RunTestOrLast()
   let in_jest_file = match(expand("%"), '\.test.js$') != -1 || match(expand("%"), '\.spec.js$') != -1
   let in_cypress_file = match(expand("%"), '\.cy.jsx$') != -1
