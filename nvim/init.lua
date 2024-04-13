@@ -1,6 +1,7 @@
 vim.cmd.source("~/.config/nvim/oldinit.vim")
 
 -- Colorscheme
+vim.g['$BAT_THEME'] = 'Dracula'
 vim.g.dracula_italic = 1
 vim.opt.termguicolors = true
 vim.cmd.colorscheme("dracula")

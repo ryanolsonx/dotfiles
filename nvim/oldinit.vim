@@ -19,8 +19,6 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fireplace'
 call plug#end()
 
-let $BAT_THEME = 'Dracula'
-
 fu! ToggleBetweenTestAndSource()
   let in_cypress_file = match(expand("%"), '\.cy.jsx$') != -1
   let in_jest_file = match(expand("%"), '\.test.js$') != -1
