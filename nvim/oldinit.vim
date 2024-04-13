@@ -19,22 +19,6 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fireplace'
 call plug#end()
 
-fu! ToggleBetweenTestAndSource()
-  let in_cypress_file = match(expand("%"), '\.cy.jsx$') != -1
-  let in_jest_file = match(expand("%"), '\.test.js$') != -1
-  let in_jsx_file = match(expand("%"), '\.jsx$') != -1
-
-  if in_cypress_file
-    :silent e %:r:r.jsx
-  elseif in_jest_file
-    :silent e %:r:r.js
-  elseif in_jsx_file
-    :silent! e %<.cy.jsx
-  else
-    :silent! e %<.test.js
-  endif
-endfu
-
 fu! RunTestOrLast()
   let in_jest_file = match(expand("%"), '\.test.js$') != -1 || match(expand("%"), '\.spec.js$') != -1
   let in_cypress_file = match(expand("%"), '\.cy.jsx$') != -1

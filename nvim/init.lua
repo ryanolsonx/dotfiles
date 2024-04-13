@@ -38,6 +38,37 @@ function git_push_new_branch()
   vim.cmd("Git push -u origin " .. branch)
 end
 
+function ends_with_extension(str, extension)
+  local location = string.find(str, extension)
+  return location ~= nil
+end
+
+function switch_to_source(extension)
+  vim.cmd("silent e %:r:r." .. extension)
+end
+
+function switch_to_test(extension)
+  vim.cmd("silent e %<." .. extension)
+end
+
+function toggle_between_test_and_source_file()
+  local current_path = vim.fn.expand('%')
+  local is_cypress_test = ends_with_extension(current_path, '.cy.jsx')
+  local is_js_test = ends_with_extension(current_path, '.test.js')
+  local is_jsx = ends_with_extension(current_path, '.jsx')
+  local is_js = ends_with_extension(current_path, '.js')
+
+  if is_cypress_test then
+    switch_to_source('jsx')
+  elseif is_js_test then
+    switch_to_source('js')
+  elseif is_jsx then
+    switch_to_test('cy.jsx')
+  elseif is_js then
+    switch_to_test('test.js')
+  end
+end
+
 -- Key bindings
 vim.g.mapleader = ' '
 vim.keymap.set('n', '<Leader>n', '<cmd>NERDTreeToggle<cr>')
@@ -51,7 +82,7 @@ vim.keymap.set('n', '<Leader>g', '<cmd>G<cr>')
 vim.keymap.set('n', '<Leader>gp', '<cmd>Git push -f<cr>')
 vim.keymap.set('n', '<Leader>gn', git_push_new_branch)
 vim.keymap.set('n', '<Leader>t', '<cmd>call RunTestOrLast()<cr>')
-vim.keymap.set('n', 'sj', '<cmd>call ToggleBetweenTestAndSource()<cr>', { silent = true })
+vim.keymap.set('n', 'sj', toggle_between_test_and_source_file, { silent = true })
 
 -- Autocmds
 local group = vim.api.nvim_create_augroup('file_type_commands', { clear = true })
