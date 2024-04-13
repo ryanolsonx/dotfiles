@@ -21,20 +21,6 @@ call plug#end()
 
 let $BAT_THEME = 'Dracula'
 
-" Keybindings
-let mapleader = ' '
-nn <leader>n :NERDTreeToggle<cr>
-nn <leader>m :NERDTreeFind<cr>
-nn <leader>f :Rg<cr>
-nn <leader>p :GFiles<cr>
-nn <leader>b :Buffers<cr>
-nn <leader>e :!npx eslint %<cr>
-nn <leader>s :!npx stylelint %<cr>
-nn <leader>g :G<cr>
-nn <leader>gp :Git push -f<cr>
-nn <leader>gn :call GitPushNew()<cr>
-nn <leader>t :call RunTestOrLast()<cr>
-
 fu! ToggleBetweenTestAndSource()
   let in_cypress_file = match(expand("%"), '\.cy.jsx$') != -1
   let in_jest_file = match(expand("%"), '\.test.js$') != -1

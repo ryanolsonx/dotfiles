@@ -25,3 +25,17 @@ vim.g.gitgutter_sign_modified = '┃'
 vim.g.gitgutter_sign_modified_removed = '┃'
 vim.g.gitgutter_sign_removed = '┃'
 vim.g.user_emmet_leader_key = '<C-j>'
+
+-- Key bindings
+vim.g.mapleader = ' '
+vim.keymap.set('n', '<Leader>n', '<cmd>NERDTreeToggle<cr>')
+vim.keymap.set('n', '<Leader>m', '<cmd>NERDTreeFind<cr>')
+vim.keymap.set('n', '<Leader>f', '<cmd>Rg<cr>')
+vim.keymap.set('n', '<Leader>p', '<cmd>GFiles<cr>')
+vim.keymap.set('n', '<Leader>b', '<cmd>Buffers<cr>')
+vim.keymap.set('n', '<Leader>e', '<cmd>!npx eslint %<cr>')
+vim.keymap.set('n', '<Leader>s', '<cmd>!npx stylelint %<cr>')
+vim.keymap.set('n', '<Leader>g', '<cmd>G<cr>')
+vim.keymap.set('n', '<Leader>gp', '<cmd>Git push -f<cr>')
+vim.keymap.set('n', '<Leader>gn', '<cmd>call GitPushNew()<cr>')
+vim.keymap.set('n', '<Leader>t', '<cmd>call RunTestOrLast()<cr>')
