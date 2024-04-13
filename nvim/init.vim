@@ -20,12 +20,12 @@ Plug 'tpope/vim-fireplace'
 call plug#end()
 
 " Basic settings
-" let $BAT_THEME = 'Dracula'
+let $BAT_THEME = 'Dracula'
 set termguicolors
-" let g:dracula_italic = 1
-" color dracula
-set background=light
-color papercolor
+let g:dracula_italic = 1
+color dracula
+" set background=light
+" color papercolor
 set number
 set autoindent
 set shiftwidth=2
