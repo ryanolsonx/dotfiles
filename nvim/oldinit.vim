@@ -26,15 +26,6 @@ let g:dracula_italic = 1
 color dracula
 " set background=light
 " color papercolor
-set number
-set autoindent
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set signcolumn=yes
-set updatetime=300
-set hidden
-set encoding=utf-8
 
 " Plugin config
 let g:airline_powerline_fonts = 1
