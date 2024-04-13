@@ -21,13 +21,6 @@ call plug#end()
 
 let $BAT_THEME = 'Dracula'
 
-" Plugin config
-let g:gitgutter_sign_added = '┃'
-let g:gitgutter_sign_modified = '┃'
-let g:gitgutter_sign_modified_removed = '┃'
-let g:gitgutter_sign_removed = '┃'
-let g:user_emmet_leader_key='<C-j>'
-
 " Keybindings
 let mapleader = ' '
 nn <leader>n :NERDTreeToggle<cr>
