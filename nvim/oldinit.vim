@@ -19,13 +19,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fireplace'
 call plug#end()
 
-" Basic settings
 let $BAT_THEME = 'Dracula'
-set termguicolors
-let g:dracula_italic = 1
-color dracula
-" set background=light
-" color papercolor
 
 " Plugin config
 let g:airline_powerline_fonts = 1
