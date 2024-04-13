@@ -22,16 +22,6 @@ call plug#end()
 let $BAT_THEME = 'Dracula'
 
 " Plugin config
-let g:airline_powerline_fonts = 1
-let g:airline_section_y = ''
-let g:airline_section_z = '%l:%c'
-let g:airline_skip_empty_sections = 1
-let g:ale_set_highlights = 0
-let g:ale_lint_on_enter = 1
-let g:ale_fix_on_save = 1
-" TODO: get stylelint working
-let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'javascriptreact': ['prettier', 'eslint']}
-let g:ale_linters = {'javascript': ['eslint', 'stylelint'], 'javascriptreact': ['eslint', 'stylelint']}
 let g:gitgutter_sign_added = '┃'
 let g:gitgutter_sign_modified = '┃'
 let g:gitgutter_sign_modified_removed = '┃'
@@ -45,6 +35,7 @@ nn <leader>m :NERDTreeFind<cr>
 nn <leader>f :Rg<cr>
 nn <leader>p :GFiles<cr>
 nn <leader>b :Buffers<cr>
+nn <leader>e :!npx eslint %<cr>
 nn <leader>s :!npx stylelint %<cr>
 nn <leader>g :G<cr>
 nn <leader>gp :Git push -f<cr>
