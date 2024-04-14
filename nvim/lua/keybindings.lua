@@ -1,4 +1,3 @@
-vim.g.mapleader = ' '
 vim.keymap.set('n', '<Leader>n', '<cmd>NERDTreeToggle<cr>')
 vim.keymap.set('n', '<Leader>m', '<cmd>NERDTreeFind<cr>')
 vim.keymap.set('n', '<Leader>f', '<cmd>Rg<cr>')
