@@ -3,7 +3,6 @@ call plug#begin()
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'sheerun/vim-polyglot'
-Plug 'scrooloose/nerdtree'
 Plug 'jbranchaud/vim-bdubs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
