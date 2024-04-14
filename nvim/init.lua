@@ -1,3 +1,5 @@
+vim.g['$BAT_THEME'] = 'Dracula'
+
 vim.g.mapleader = ' '
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -13,8 +15,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
-require("vim-plugins")
-require("colorscheme")
 require("options")
 require("git-push-new-branch")
 require("toggle-between-test-and-source")
