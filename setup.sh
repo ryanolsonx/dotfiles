@@ -10,7 +10,10 @@ rm -rf ~/.tmux.conf
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 rm -rf ~/.config/kitty
-ln -s ~/dotfiles/kitty ~/.config/kitty
+ln -s ~/dotfiles/.config/kitty ~/.config/kitty
 
 rm -rf ~/.config/nvim
-ln -s ~/dotfiles/nvim ~/.config/nvim
+ln -s ~/dotfiles/.config/nvim ~/.config/nvim
+
+rm -rf ~/.config/bat
+ln -s ~/dotfiles/.config/bat ~/.config/bat
